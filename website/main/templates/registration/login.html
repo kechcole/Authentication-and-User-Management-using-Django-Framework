@@ -1,0 +1,15 @@
+{% extends 'main/base.html' %} 
+{% block title %}Login{% endblock %} 
+{% load crispy_forms_tags %} 
+{% block content %}
+<form method="post">
+    <!-- For all forms with methpod post, this security feature ust be added -->
+    <!-- In our form features such as email and name use crispy form tags to display them 
+         form is a variable containing user information -->
+  {% csrf_token %}{{form|crispy}}
+  <!-- If user doesn't have an account he cn click here to create one -->
+  <p>Don't have an account? Create one <a href="/sign-up">Here</a>!</p>
+  <!-- Button to submit form -->
+  <button type="submit" class="btn btn-success">Login</button>
+</form>
+{% endblock %}

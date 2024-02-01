@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- boostrap css cdn -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <title>{% block title %}My Site{% endblock %}</title>
+
+  </head>
+  <body>
+    <!-- add boostrap navigation bar for website navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <!-- make it take the whole screen -->
+        <div class="container-fluid">
+
+            <!-- Links on the left side of our nav bar  -->
+            <div>
+              <ul class="navbar-nav">
+                <!-- home link -->
+                <li class="nav-item">
+                  <a class="nav-link" href="/home">Home</a>
+                </li>
+                <!-- link for creating a post -->
+                <li class="nav-item">
+                  <a class="nav-link" href="/create-post">Post</a>
+                </li>
+              </ul>
+            </div>
+            
+            <!-- Links on the right side of our nav bar  -->
+            <div>
+                <ul class="navbar-nav">
+                  <!-- Validate user  -->
+                  {% if user.is_authenticated %}
+                  <!-- Display user name  and log out button -->
+                  <span class="navbar-text">Logged in as {{user.username}} | </span> 
+                  <li class="nav-item">
+                    <a class="nav-link" href="/logout">Logout</a>
+                  </li>
+                  {% else %}
+                  <!-- Login link showing who accesed page -->
+                  <li class="nav-item">
+                    <a class="nav-link" href="/login">Login</a>
+                  </li>
+                  {% endif %}
+                </ul>
+              </div>
+    </nav>
+        
+        <!-- boostrap container that will host all the html content in child templates-->
+        <div class="container">
+            {% block content %} {% endblock %}
+        </div>
+
+    <!-- Bostrap bundle  -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+{% extends 'main/base.html' %} 
+{% block title %}Sign Up{% endblock %} 
+{% load crispy_forms_tags %} 
+{% block content %}
+<form method="post">
+    <!-- For all forms with method post, this security feature must be added -->
+    <!-- In our form features such as email and name use crispy form tags to display them 
+         form is a variable containing user information -->
+  {% csrf_token %}{{form|crispy}}
+  <!-- If user has an account he can click 'Here' to create one -->
+  <p>Have an account? Login <a href="/login">Here</a>!</p>
+  <!-- Button to submit form -->
+  <button type="submit" class="btn btn-success">Register</button>
+</form>
+{% endblock %}
