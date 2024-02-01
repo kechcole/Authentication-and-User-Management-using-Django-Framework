@@ -97,6 +97,5 @@ DATABASES = {
 ```
 Finally, migrations were applied from the command line as follws ;
 ```console
-py manage.py migrate auth
 py manage.py migrate
 ```
