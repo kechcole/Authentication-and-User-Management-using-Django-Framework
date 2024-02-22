@@ -14,7 +14,7 @@
 In this project i created a user account with logging functionality using Pythons Django Framework which contains an wide array of built in functionality designed to meet most needs of application designers. User activity was monitored from a locally hosted postgress database, they were abble to register, logging, reset, and change passwords.  
 Authentication identifies and verifies the person trying to access an account by comparing with previous collected digital information, varification aims to validate the information provided.  
 
-#### Tools Used : Django 3.0, Python 3.10, Crispy forms, Boostrap5, psycopg2
+#### Dependancies : Django 3.0, Python 3.10, Crispy forms, Boostrap5, psycopg2
 
 ### 2. Project Setup
 A virtual enviroment that creates an isolated enviroment for dependancies was created to ensure modules have the correct versions downloaded. 

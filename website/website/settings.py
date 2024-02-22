@@ -85,8 +85,8 @@ WSGI_APPLICATION = 'website.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'Authentications', # database name 
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'authentications', # database name 
         'USER': 'postgres',  # Default database name
         'HOST': 'localhost',  # local machine
         'PASSWORD': '1234COLE',  # postgres password
